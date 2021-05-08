@@ -63,13 +63,13 @@
                                     <div class="divider"></div>
                                     <div class="product-detail__content__footer">
                                         <ul>
-                                            <li>Brand:gucci
+                                            <li>Tag:<a href="/shop/{{$product->Tag->id}}">{{$product->Tag->name}}</a>
                                             </li>
-                                            <li>Product code: PM 01
-                                            </li>
-                                            <li>Reward point: 30
-                                            </li>
-                                            <li>Availability: In Stock</li>
+                                            {{--<li>Product code: PM 01--}}
+                                            {{--</li>--}}
+                                            {{--<li>Reward point: 30--}}
+                                            {{--</li>--}}
+                                            {{--<li>Availability: In Stock</li>--}}
                                         </ul>
                                         {{--<div class="product-detail__colors"><span>Color:</span>--}}
                                         {{--<div class="product-detail__colors__item" style="background-color: #8B0000"></div>--}}

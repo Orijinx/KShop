@@ -30,16 +30,14 @@
                         <div class="card property_list">
                             <div class="property_image">
                                 <img class="img-thumbnail img-fluid" src="{{asset($prod->img_path)}}" alt="img">
-                                <span class="badge badge-danger">For Sale</span>
+                                {{--<span class="badge badge-danger">For Sale</span>--}}
                             </div>
                             <div class="body">
                                 <div class="property-content">
                                     <div class="detail">
                                         <h5 class="text-success m-t-0 m-b-0">{{$prod->price}}</h5>
                                         <h4 class="m-t-0"><a href="#" class="col-blue-grey">{{$prod->name}}</a></h4>
-                                        <p class="text-muted"><i class="zmdi zmdi-pin m-r-5"></i>245 E 20th St, New
-                                            York, NY
-                                            201609</p>
+                                        <p class="text-muted"><i class="zmdi zmdi-pin m-r-5"></i>{{$prod->Brand->name}}</p>
                                         <p class="text-muted m-b-0">{{$prod->description}}</p>
                                     </div>
                                     {{--<div class="property-action m-t-15">--}}

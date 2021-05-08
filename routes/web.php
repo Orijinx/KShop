@@ -21,6 +21,7 @@ use App\Http\Controllers\AdminController;
 Route::get('/', [MainController::class,"IndexView"])->name('home');
 Route::get('/cart',[MainController::class,"CartView"]);
 Route::get('/shop',[MainController::class,"ShopView"]);
+Route::get('/shop/{id}',[MainController::class,"ShopTagView"]);
 Route::get('/orders',[MainController::class,"OrderView"]);
 
 
@@ -40,9 +41,15 @@ Route::get('/product/{id}',[MainController::class,"ProductView"]);
 //Панель администратора
 Route::get('/admin',[AdminController::class,"AdminView"]);
 Route::get('/add-product',[AdminController::class,"addProductView"]);
+Route::get('/brands',[AdminController::class,"BrandsView"]);
+Route::get('/tags',[AdminController::class,"TagsView"]);
 Route::get('/all-product',[AdminController::class,"allProducts"]);
 // Измениения из админки
 Route::post('/addProduct',[AdminController::class,"addProduct"]);
+Route::post('/addBrand',[AdminController::class,"addBrand"]);
+Route::post('/delBrands',[AdminController::class,"DelBrands"]);
+
+
 
 
 //

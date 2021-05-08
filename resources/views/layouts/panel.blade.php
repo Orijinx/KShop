@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <meta name="description" content="Responsive Bootstrap 4 and web Application ui kit.">
-    <title>:: Compass RE :: Agent</title>
+    <title>:: KShop Panel ::</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon-->
     <link rel="stylesheet" href="{{asset('passets/plugins/bootstrap/css/bootstrap.min.css')}}">
     <!-- Custom Css -->
@@ -209,13 +209,13 @@
                 <ul class="ml-menu">
                     <li><a href="/all-product">Вся продукция</a></li>
                     <li><a href="/add-product">Добавить продукцию</a></li>
-                    <li><a href="property-detail.html">Склад</a></li>
+                    {{--<li><a href="property-detail.html">Склад</a></li>--}}
                 </ul>
             </li>
             <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-city"></i><span>Блоки сайта</span> </a>
                 <ul class="ml-menu">
-                    <li><a href="apartment.html">Все блоки</a></li>
-                    <li><a href="office.html">Добавить</a></li>
+                    <li><a href="/tags">Секции</a></li>
+                    <li><a href="/brands">Бренды</a></li>
                     {{--<li><a href="shop.html">Shop</a></li>--}}
                     {{--<li><a href="villa.html">Villa</a></li>--}}
                 </ul>
