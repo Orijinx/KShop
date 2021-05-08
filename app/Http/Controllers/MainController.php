@@ -100,6 +100,7 @@ class MainController extends Controller
 
     }
 
+
     /**
      * @param $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
@@ -108,34 +109,43 @@ class MainController extends Controller
     {
 
 
-        $products = DB::table('products')->where("tag_id", "=", $id)->simplePaginate(5);
+//        $products = DB::table('products')->where("tag_id", "=", $id)->simplePaginate(5);
+
+//        $products =Product::where("tag_id",$id)->paginate(5);
         $tag = tags::where("id", $id)->first();
         $alltags = tags::all();
-        $alltags = $alltags->sortBy(["parent_id"]);
-        $parent_tags = collect();
-        $son_tags = collect();
-        if ($tag->parent_id) {
-//            $parent_tags = collect();
 
-            $parent_tag = tags::where("id", $tag->parent_id)->first();
-//            array_push($parent_tags, $parent_tag);
-            $parent_tags->push($parent_tag);
-            while ($parent_tag->parent_id != null) {
-                $parent_tag = tags::where("id", $parent_tag->parent_id)->first();
-
-                //                array_push($parent_tags, $parent_tag);
-                $parent_tags->push($parent_tag);
-            }
-            $parent_tags = $parent_tags->sortBy(["parent_id"]);
-//        $parent_tag = tags::where("id",$tag->parent_id)->first();
+        $id_arr = array();
+        foreach ($alltags as $g){
+            array_push($id_arr,$g->id);
         }
+        $products = DB::table('products')->whereIn("tag_id", $id_arr)->simplePaginate(5);
+//
+//        while (isset($chil)){
+//            var_dump($chil);
+//            echo "<br>";
+//            $chil = $chil->Childs;
+//        }
+
+//        $parent_tags = collect();
+//        $son_tags = collect();
+//        if ($tag->parent_id) {
+////            $parent_tags = collect();
+//
+//            $parent_tag = tags::where("id", $tag->parent_id)->first();
+////            array_push($parent_tags, $parent_tag);
+//            $parent_tags->push($parent_tag);
+//            while ($parent_tag->parent_id != null) {
+//                $parent_tag = tags::where("id", $parent_tag->parent_id)->first();
+//
+//                //                array_push($parent_tags, $parent_tag);
+//                $parent_tags->push($parent_tag);
+//            }
+//            $parent_tags = $parent_tags->sortBy(["parent_id"]);
+////        $parent_tag = tags::where("id",$tag->parent_id)->first();
+//        }
 
 
-        $bid = $tag->id;
-
-   do{
-       tags::where("parent_id",$id);
-   } while()
 //
 //        if ($tag->son_id) {
 ////            $son_tags = collect();
@@ -177,10 +187,11 @@ class MainController extends Controller
                 $cart->amount += $item->Product->price * $item->quantity;
                 $cart->save();
             }
-            return view("shop", compact("cart", "cart_con", "products", "parent_tags", "tag", "alltags", "son_tags"));
+//            return view("shop", compact("cart", "cart_con", "products", "parent_tags", "tag", "alltags", "son_tags"));
+            return view("shop", compact("cart", "cart_con", "products", "alltags","tag",));
         } else {
-
-            return view('shop', ['products' => $products, "tag" => $tag, "parent_tags" => $parent_tags, "alltags" => $alltags, "son_tags" => $son_tags]);
+            return view("shop", compact("products", "alltags","tag"));
+//            return view('shop', ['products' => $products, "tag" => $tag, "parent_tags" => $parent_tags, "alltags" => $alltags, "son_tags" => $son_tags]);
 
 
         }

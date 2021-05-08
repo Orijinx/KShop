@@ -35,20 +35,6 @@
                                 <h2><strong>Стандартная</strong> Информация
                                     {{--<small>Description text here...</small>--}}
                                 </h2>
-                                {{--<ul class="header-dropdown m-r--5">--}}
-                                {{--<li class="dropdown"><a href="javascript:void(0);" class="dropdown-toggle"--}}
-                                {{--data-toggle="dropdown" role="button" aria-haspopup="true"--}}
-                                {{--aria-expanded="false"><i class="zmdi zmdi-more-vert"></i></a>--}}
-                                {{--<ul class="dropdown-menu pull-right">--}}
-                                {{--<li><a href="javascript:void(0);" class=" waves-effect waves-block">Action</a>--}}
-                                {{--</li>--}}
-                                {{--<li><a href="javascript:void(0);" class=" waves-effect waves-block">Another--}}
-                                {{--action</a></li>--}}
-                                {{--<li><a href="javascript:void(0);" class=" waves-effect waves-block">Something--}}
-                                {{--else here</a></li>--}}
-                                {{--</ul>--}}
-                                {{--</li>--}}
-                                {{--</ul>--}}
                             </div>
                             <div class="body">
                                 <div class="row clearfix">
@@ -65,13 +51,6 @@
 
                         <div class="card">
                             <div class="col-sm-12">
-                                <label for="son">Дочерние</label>
-                                <select multiple  name="son[]" id="son">
-                                    @foreach($tags as $tag)
-                                        <option value="{{$tag->id}}">{{$tag->name}}</option>
-                                    @endforeach
-
-                                </select>
                                 <label for="parent">Отцовская</label>
                                 <select  name="parent" id="parent">
                                     @foreach($tags as $tag)

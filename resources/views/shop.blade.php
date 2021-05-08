@@ -5,73 +5,62 @@
             <div class="shop-header">
                 <div class="shop-header__view">
                     <div class="shop-header__view__icon">
+                        @if(isset($tag))
 
-                        @if(isset($parent_tags))
-                            <ul name="#">
-                                @foreach($parent_tags as $t)
-                                    @if($t->id == $tag->id)
-                                        <li><a style="color: red" href="{{$t->id}}">{{$t->name}}</a></li>
+                            <h3>{{$tag->name}}</h3>
 
-                                    @else
-                                        <li><a href="{{$t->id}}">{{$t->name}}</a></li>
-
-                                    @endif
-                                @endforeach
-                                {{--<option value="za">Z to A</option>--}}
-                                {{--<option value="low-high">Low to High Price</option>--}}
-                                {{--<option value="high-low">High to Low Price</option>--}}
-                            </ul>
-                        @endif
-                        @if(isset($son_tags))
-                            <ul name="#">
-                                @foreach($son_tags as $t)
-                                    @if($t->id == $tag->id)
-                                        <li><a style="color: red" href="{{$t->id}}">{{$t->name}}</a></li>
-
-                                    @else
-                                        <li><a style="color: blue" href="{{$t->id}}">{{$t->name}}</a></li>
-
-                                    @endif
-                                @endforeach
-                                {{--<option value="za">Z to A</option>--}}
-                                {{--<option value="low-high">Low to High Price</option>--}}
-                                {{--<option value="high-low">High to Low Price</option>--}}
-                            </ul>
                         @endif
 
+                        {{--@if(isset($parent_tags))--}}
+                        {{--<ul name="#">--}}
+                        {{--@foreach($parent_tags as $t)--}}
+                        {{--@if($t->id == $tag->id)--}}
+                        {{--<li><a style="color: red" href="{{$t->id}}">{{$t->name}}</a></li>--}}
+
+                        {{--@else--}}
+                        {{--<li><a href="{{$t->id}}">{{$t->name}}</a></li>--}}
+
+                        {{--@endif--}}
+                        {{--@endforeach--}}
+                        {{--<option value="za">Z to A</option>--}}
+                        {{--<option value="low-high">Low to High Price</option>--}}
+                        {{--<option value="high-low">High to Low Price</option>--}}
+                        {{--</ul>--}}
+                        {{--@endif--}}
+                        {{--@if(isset($son_tags))--}}
+                        {{--<ul name="#">--}}
+                        {{--@foreach($son_tags as $t)--}}
+                        {{--@if($t->id == $tag->id)--}}
+                        {{--<li><a style="color: red" href="{{$t->id}}">{{$t->name}}</a></li>--}}
+
+                        {{--@else--}}
+                        {{--<li><a style="color: blue" href="{{$t->id}}">{{$t->name}}</a></li>--}}
+
+                        {{--@endif--}}
+                        {{--@endforeach--}}
+                        {{--<option value="za">Z to A</option>--}}
+                        {{--<option value="low-high">Low to High Price</option>--}}
+                        {{--<option value="high-low">High to Low Price</option>--}}
+                        {{--</ul>--}}
+                        {{--@endif--}}
                     </div>
-                    @if(isset($tag))
 
-                        <h3>{{$tag->name}}</h3>
-
-                    @endif
                 </div>
                 <div class="shop-header__view">
                     <div class="shop-header__view__icon">
 
-
-                        @if(isset($alltags))
-                            <ul name="#">
-                                @if(isset($tag))
-                                    @foreach($alltags as $t)
-                                        @if($t->id == $tag->id)
-                                            <li><a style="color: red" href="/shop/{{$t->id}}">{{$t->name}}</a></li>
-
-                                        @else
-                                            <li><a href="{{$t->id}}">{{$t->name}}</a></li>
-
-                                        @endif
-                                    @endforeach
-                                @else
-                                    @foreach($alltags as $t)
-                                        <li><a href="/shop/{{$t->id}}">{{$t->name}}</a></li>
-                                    @endforeach
+                        <div class="container">
+                            @foreach($alltags as $tg)
+                                @if(count($tg->Childs))
+                                    <div>
+                                        <a href="/shop/{{$tg->id}}">
+                                            {{ $tg->name }}
+                                        </a>
+                                    </div>
+                                    @include('layouts.childs',['childs' => $tg->Childs])
                                 @endif
-                                {{--<option value="za">Z to A</option>--}}
-                                {{--<option value="low-high">Low to High Price</option>--}}
-                                {{--<option value="high-low">High to Low Price</option>--}}
-                            </ul>
-                        @endif
+                            @endforeach
+                        </div>
                     </div>
                 </div>
 
