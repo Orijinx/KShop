@@ -47,7 +47,7 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td>{{$item->Product->price}}</td>
+                                            <td>{{$item->Product->price}}₽</td>
                                             <td>
                                                 <div class="quantity-controller ">
                                                     <form action="/delItem" method="POST">
@@ -67,7 +67,7 @@
                                                     </form>
                                                 </div>
                                             </td>
-                                            <td>{{$item->Product->price * $item->quantity}}</td>
+                                            <td>{{$item->Product->price * $item->quantity}}₽</td>
                                             <td>
                                                 <form action="/destroyItem" method="post">
                                                     @csrf
@@ -150,11 +150,11 @@
                                                 <tbody>
                                                 <tr>
                                                     <th>Цена без скидок</th>
-                                                    <td>{{$cart->amount}}</td>
+                                                    <td>{{$cart->amount}}₽</td>
                                                 </tr>
                                                 <tr>
                                                     <th>Окончательная цена</th>
-                                                    <td class="final-price">{{$cart->amount}}</td>
+                                                    <td class="final-price">{{$cart->amount}}₽</td>
                                                 </tr>
                                                 </tbody>
                                             </table>

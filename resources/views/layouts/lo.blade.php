@@ -115,16 +115,15 @@
                     </ul>
                 </div>
                 <div class="menu-functions "><a class="menu-icon -search" href="#">
-                        <img
-                            src="{{asset('assets/images/header/search-icon.png')}}" alt="Search icon"/></a>
-                    <div class="search-box">
-                        <form action="/search" method="get">
-                            @csrf
-                            <input type="text" name="search" placeholder="What are you looking for?" name="search"/>
-                            <button><img src="{{asset('assets/images/header/search-icon.png')}}" alt="Search icon"/>
-                            </button>
-                        </form>
-                    </div>
+                        {{--<img--}}
+                        {{--src="{{asset('assets/images/header/search-icon.png')}}" alt="Search icon"/></a>--}}
+                        {{--<div class="search-box">--}}
+                        {{--<form>--}}
+                        {{--<input type="text" placeholder="What are you looking for?" name="search"/>--}}
+                        {{--<button><img src="{{asset('assets/images/header/search-icon.png')}}" alt="Search icon"/>--}}
+                        {{--</button>--}}
+                        {{--</form>--}}
+                        {{--</div>--}}
                         {{--<a class="menu-icon -wishlist" href="/wishlist.html"><img--}}
                         {{--src="{{asset('assets/images/header/wishlist-icon.png')}}" alt="Wishlist icon"/></a>--}}
                         <div class="menu-cart">
@@ -160,9 +159,9 @@
 <div class="footer-one">
     <div class="container">
         <div class="footer-one__header">
-            <div class="footer-one__header__logo"><a href="/homepages/homepage1"><img
-                        src="{{asset('assets/images/logo.png')}}" alt="Logo"/></a></div>
-            <div class="footer-one__header__newsletter"><span>Subscribe Newletter:</span>
+            {{-- <div class="footer-one__header__logo"><a href="/homepages/homepage1"><img --}}
+                        {{-- src="{{asset('assets/images/logo.png')}}" alt="Logo"/></a></div> --}}
+            <div class="footer-one__header__newsletter"><span>Подпишись:</span>
                 <div class="footer-one-newsletter">
                     <div class="subscribe-form">
                         <div class="mc-form">
@@ -193,34 +192,34 @@
             <div class="row">
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="footer__section -info">
-                        <h5 class="footer-title">Contact info</h5>
-                        <p>Address:<span>2168 S Archer Ave, Chicago, IL 60616, US</span></p>
-                        <p>Phone:<span>+1 312-808-1999</span></p>
-                        <p>Email:<span>Beatycosmetics@gmail.com</span></p>
-                        <p>Opentime:<span>8.00am - 11.00.pm</span></p>
+                        <h5 class="footer-title">Контакты</h5>
+                        <p>Адрес:<span>Баженова 2, Калуга, Россия</span></p>
+                        <p>Телефон:<span>+7 962 096 66 66</span></p>
+                        <p>Email:<span>kshop@gmail.com</span></p>
+                        <p>Время работы:<span>8.00 - 23.00</span></p>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="footer__section -links">
                         <div class="row">
                             <div class="col-12 col-sm-6">
-                                <h5 class="footer-title">Account</h5>
+                                <h5 class="footer-title">Аккаунт</h5>
                                 <ul>
-                                    <li><a href="#">My account</a></li>
-                                    <li><a href="wishlist.html">Wishlist</a></li>
-                                    <li><a href="cart">Cart</a></li>
-                                    <li><a href="fullwidth-4col">Shop</a></li>
-                                    <li><a href="checkout">Checkout</a></li>
+                                    <li><a href="#">Мой профиль</a></li>
+                                    <li><a href="wishlist.html">Избранное</a></li>
+                                    <li><a href="cart">Корзина</a></li>
+                                    <li><a href="fullwidth-4col">Магазин</a></li>
+                                    <li><a href="checkout">Сделать заказ</a></li>
                                 </ul>
                             </div>
                             <div class="col-12 col-sm-6">
-                                <h5 class="footer-title">Infomation</h5>
+                                <h5 class="footer-title">Информация</h5>
                                 <ul>
-                                    <li><a href="about.html">About us</a></li>
-                                    <li><a href="contact.html">Careers</a></li>
-                                    <li><a href="contact.html">Delivery Information</a></li>
-                                    <li><a href="contact.html">Privacy Policy</a></li>
-                                    <li><a href="contact.html">Terms &amp; Condition</a></li>
+                                    <li><a href="about.html">О нас</a></li>
+                                    <li><a href="contact.html">Работа у нас</a></li>
+                                    <li><a href="contact.html">Доставка и оплата</a></li>
+                                    <li><a href="contact.html">Политика обработки персональных данных</a></li>
+                                    <li><a href="contact.html">Условия &amp; положения</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -228,8 +227,8 @@
                 </div>
                 <div class="col-12 col-lg-4">
                     <div class="footer__section -payment">
-                        <h5 class="footer-title">Payment methods</h5>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit gravida facilisis.</p>
+                        <h5 class="footer-title">Способы оплаты</h5>
+                        {{-- <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit gravida facilisis.</p> --}}
                         <div class="payment-methods"><img src="{{asset('assets/images/footer/payment.png')}}"
                                                           alt="Payment methods"/></div>
                     </div>
@@ -240,11 +239,11 @@
     <div class="footer-one__footer">
         <div class="container">
             <div class="footer-one__footer__wrapper">
-                <p>© Copyright 2020 Beauty</p>
+                <p>© KShop, 2021</p>
                 <ul>
-                    <li><a href="contact.html">Privacy Policy</a></li>
-                    <li><a href="contact.html">Terms &amp; Condition</a></li>
-                    <li><a href="contact.html">Site map</a></li>
+                    <li><a href="contact.html">Политика обработки персональных данных</a></li>
+                    <li><a href="contact.html">Условия &amp; положения</a></li>
+                    <li><a href="contact.html">Карта сайта</a></li>
                 </ul>
             </div>
         </div>

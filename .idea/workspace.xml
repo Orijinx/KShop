@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08c35c94-43c0-47cd-9d3c-80af76210f2c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MainController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_15_071006_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_04_15_071006_create_products_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/childs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/childs.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/lo.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/lo.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/panel.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/panel.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/panel/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/panel/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/panel/products.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/panel/products.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/panel/tags.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/panel/tags.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/shop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/shop.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
-    </list>
+    <list default="true" id="08c35c94-43c0-47cd-9d3c-80af76210f2c" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,7 +27,7 @@
         <entry file="file://$PROJECT_DIR$/resources/views/panel/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="432">
-              <caret line="655" column="73" selection-start-line="655" selection-start-column="73" selection-end-line="655" selection-end-column="73" />
+              <caret line="655" selection-start-line="655" selection-end-line="656" />
             </state>
           </provider>
         </entry>
@@ -504,16 +488,15 @@
       <workItem from="1620306413928" duration="4576000" />
       <workItem from="1620476826107" duration="15055000" />
       <workItem from="1620577058055" duration="893000" />
-      <workItem from="1620578526544" duration="6057000" />
+      <workItem from="1620578526544" duration="6953000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62351000" />
+    <option name="totallyTimeSpent" value="63247000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="72" y="27" width="1848" height="1053" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="11" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
@@ -521,8 +504,8 @@
       <window_info anchor="bottom" id="Version Control" order="4" />
       <window_info anchor="bottom" id="Run" order="7" />
       <window_info id="npm" order="1" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="3" visible="true" weight="0.27382258" />
-      <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.3018868" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="3" visible="true" weight="0.27382258" />
+      <window_info content_ui="combo" id="Project" order="3" visible="true" weight="0.3018868" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="0" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
@@ -892,7 +875,7 @@
     <entry file="file://$PROJECT_DIR$/resources/views/panel/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
-          <caret line="655" column="73" selection-start-line="655" selection-start-column="73" selection-end-line="655" selection-end-column="73" />
+          <caret line="655" selection-start-line="655" selection-end-line="656" />
         </state>
       </provider>
     </entry>

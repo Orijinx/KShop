@@ -59,17 +59,15 @@
                                         </div>
                                         {{--<p>03 review</p><a href="#">Write a reviews</a>--}}
                                     </div>
-                                    <h3>{{$product->price}}</h3>
+                                    <h3>{{$product->price}}₽</h3>
                                     <div class="divider"></div>
                                     <div class="product-detail__content__footer">
                                         <ul>
-                                            <li>Tag:<a href="/shop/{{$product->Tag->id}}">{{$product->Tag->name}}</a>
+                                            <li>Бренд:{{$product->brand}}
                                             </li>
-                                            {{--<li>Product code: PM 01--}}
-                                            {{--</li>--}}
-                                            {{--<li>Reward point: 30--}}
-                                            {{--</li>--}}
-                                            {{--<li>Availability: In Stock</li>--}}
+                                            <li>Артикул:{{$product->p_code}}
+                                            </li>
+                                            <li>Наличие: есть</li>
                                         </ul>
                                         {{--<div class="product-detail__colors"><span>Color:</span>--}}
                                         {{--<div class="product-detail__colors__item" style="background-color: #8B0000"></div>--}}
@@ -97,7 +95,7 @@
                                         <div class="divider"></div>
                                         <div class="product-detail__content__tab">
                                             <ul class="tab-content__header">
-                                                <li class="tab-switcher" data-tab-index="0" tabindex="0">Description
+                                                <li class="tab-switcher" data-tab-index="0" tabindex="0">Описание
                                                 </li>
                                                 {{--<li class="tab-switcher" data-tab-index="1" tabindex="0">Shipping &--}}
                                                 {{--Returns--}}
@@ -148,7 +146,7 @@
                                                             Inappropriate</a>
                                                     </div>
                                                     <form>
-                                                        <h5>Write a review</h5>
+                                                        <h5>Оставьте отзыв</h5>
                                                         <div class="row">
                                                             <div class="col-12 col-md-6">
                                                                 <div class="input-validator">
@@ -169,7 +167,7 @@
                                                                 <span class="input-error"></span>
                                                             </div>
                                                             <div class="col-12">
-                                                                <button class="btn -dark">Write a review
+                                                                <button class="btn -dark">Оставьте отзыв
                                                                 </button>
                                                             </div>
                                                         </div>

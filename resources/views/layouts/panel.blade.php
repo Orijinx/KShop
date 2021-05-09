@@ -5,13 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <meta name="description" content="Responsive Bootstrap 4 and web Application ui kit.">
-    <title>:: KShop Panel ::</title>
+    <title>:: Compass RE :: Agent</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon-->
     <link rel="stylesheet" href="{{asset('passets/plugins/bootstrap/css/bootstrap.min.css')}}">
     <!-- Custom Css -->
     <link rel="stylesheet" href="{{asset('passets/css/main.css')}}">
     <link rel="stylesheet" href="{{asset('passets/css/color_skins.css')}}">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.1/dist/chart.min.js"></script>
 </head>
 <body class="theme-purple">
 <!-- Page Loader -->
@@ -29,7 +28,9 @@
     <div class="col-12">
         <div class="navbar-header">
             <a href="javascript:void(0);" class="bars"></a>
-            <a class="navbar-brand" href="index.html"><img src="{{asset('passets/images/logo.svg')}}" width="30" alt="Compass"><span class="m-l-10">KShop</span></a>
+            <a class="navbar-brand" href="/">
+                {{-- <img src="{{asset('passets/images/logo.svg')}}" width="30" alt="Compass"> --}}
+                <span class="m-l-10">KShop</span></a>
         </div>
         {{--<ul class="nav navbar-nav navbar-left">--}}
             {{--<li><a href="javascript:void(0);" class="ls-toggle-btn" data-close="true"><i class="zmdi zmdi-swap"></i></a></li>--}}
@@ -208,15 +209,15 @@
             <li><a href="/admin"><i class="zmdi zmdi-home"></i><span>Главная</span></a></li>
             <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-city"></i><span>Продукция</span> </a>
                 <ul class="ml-menu">
-                    <li><a href="/all-product">Вся продукция</a></li>
-                    <li><a href="/add-product">Добавить продукцию</a></li>
-                    {{--<li><a href="property-detail.html">Склад</a></li>--}}
+                    <li><a href="/all-product">Все товары</a></li>
+                    <li><a href="/add-product">Добавить товар</a></li>
+                    <li><a href="property-detail.html">Склад</a></li>
                 </ul>
             </li>
             <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-city"></i><span>Блоки сайта</span> </a>
                 <ul class="ml-menu">
-                    <li><a href="/tags">Секции</a></li>
-                    <li><a href="/brands">Бренды</a></li>
+                    <li><a href="apartment.html">Все блоки</a></li>
+                    <li><a href="office.html">Добавить</a></li>
                     {{--<li><a href="shop.html">Shop</a></li>--}}
                     {{--<li><a href="villa.html">Villa</a></li>--}}
                 </ul>
@@ -687,8 +688,8 @@
 </aside>
 
 <!-- Chat-launcher -->
-<div class="chat-launcher"></div>
-<div class="chat-wrapper">
+{{-- <div class="chat-launcher"></div> --}}
+{{-- <div class="chat-wrapper">
     <div class="card">
         <div class="header">
             <ul class="list-unstyled team-info margin-0">
@@ -746,7 +747,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 
 
 @yield("content")

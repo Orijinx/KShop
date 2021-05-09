@@ -8,7 +8,7 @@
                 <div class="slider__carousel__item slider-1">
                     <div class="container">
                         <div class="slider-background"><img class="slider-background"
-                                                            src="{{asset('assets/images/slider/SliderOne/1.png')}}"
+                                                            src="{{asset('assets/images/slider/SliderOne/1.gif')}}"
                                                             alt="Slider background"/></div>
                         <div class="slider-content">
                             <h5 class="slider-content__subtitle" data-animation-in="fadeInUp"
@@ -87,16 +87,20 @@
                     </div>
                     <div class="col-12 col-md-6">
                         <div class="introduction-one-content">
-                            <h5>О<span> Магазине</span></h5>
+                            <h5><span>О Магазине</span></h5>
                             <div class="section-title " style="margin-bottom: 1.875em">
-                                <h2>Когда ты прекрасна </br> Ты это чувствуешь</h2><img
+                                <h2><br>Лучший макияж — это </br>  здоровая сияющая кожа</h2><img
                                     src="{{asset('assets/images/introduction/IntroductionOne/content-deco.png')}}"
                                     alt="Decoration"/>
                             </div>
-                            <p>The top three occupations in the Beauty salons Industry Group are Hairdressers,
-                                hairstylists,
-                                & cosmetologists, Manicurists and pedicurists, Receptionists & information clerks,
-                                Supervisors of personal care and service workers, and Skincare specialists.</p>
+                            <p>Корейская косметика заблистала на мировом косметическом рынке относительно недавно, но уже успела сделать себе громкое имя, затмив продукцию многих европейских производителей.</p>
+                            <h3>Преимущества корейской косметики: </h3>
+                            <p> </p>
+                            <p> Высокая эффективность: корейская косметика позволяет добиться заметного и устойчивого результата уже после первого применения.
+                                Относительно невысокая цена в соотношении с высоким качеством продукции.
+                                Широкий ассортимент разнообразных линеек продукции позволяет подобрать то, что необходимо именно вам.
+                                Богатый опыт восточной медицины с давних пор эффективно использовавший силу экстрактов различных растений.
+                                Кроме того, большая конкуренция между южнокорейскими брендами обуславливает регулярные инновации в косметологии. </p>
                             {{--<a class="btn -white" href="#">Appointment</a>--}}
                         </div>
                     </div>
@@ -134,7 +138,7 @@
         <div class="product-slide">
             <div class="container">
                 <div class="section-title -center" style="margin-bottom: 1.875em">
-                    <h2>Beauty Products</h2><img
+                    <h2>KShop продукты</h2><img
                         src="{{asset('assets/images/introduction/IntroductionOne/content-deco.png')}}"
                         alt="Decoration"/>
                 </div>
@@ -167,14 +171,14 @@
                                     </div>
                                     <div class="product-content">
                                         <div class="product-content__header">
-                                            <div class="product-category">eyes</div>
+                                            <div class="product-category">{{$product->brand}}</div>
                                             <div class="rate"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
                                                     class="fas fa-star"></i><i class="fas fa-star"></i><i
                                                     class="far fa-star"></i></div>
                                         </div>
                                         <a class="product-name" href="/product/{{$product->id}}">{{$product->name}}</a>
                                         <div class="product-content__footer">
-                                            <h5 class="product-price--main">{{$product->price}}₽</h5>
+                                            <h5 class="product-price--main">{{$product->price}} ₽</h5>
                                             {{--<div class="product-colors">--}}
                                             {{--<div class="product-colors__item" style="background-color: #8B0000"></div>--}}
                                             {{--<div class="product-colors__item" style="background-color: #4169E1"></div>--}}
