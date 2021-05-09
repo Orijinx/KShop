@@ -41,6 +41,7 @@ return array(
     'App\\User' => $baseDir . '/app/User.php',
     'App\\brand' => $baseDir . '/app/brand.php',
     'App\\order_conn' => $baseDir . '/app/order_conn.php',
+    'App\\stat' => $baseDir . '/app/stat.php',
     'App\\storage' => $baseDir . '/app/storage.php',
     'App\\tags' => $baseDir . '/app/tags.php',
     'App\\tags_connect' => $baseDir . '/app/tags_connect.php',

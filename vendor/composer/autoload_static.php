@@ -517,6 +517,7 @@ class ComposerStaticInitd5d45244ba2523895c0429b8d891ab07
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'App\\brand' => __DIR__ . '/../..' . '/app/brand.php',
         'App\\order_conn' => __DIR__ . '/../..' . '/app/order_conn.php',
+        'App\\stat' => __DIR__ . '/../..' . '/app/stat.php',
         'App\\storage' => __DIR__ . '/../..' . '/app/storage.php',
         'App\\tags' => __DIR__ . '/../..' . '/app/tags.php',
         'App\\tags_connect' => __DIR__ . '/../..' . '/app/tags_connect.php',

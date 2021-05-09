@@ -11,6 +11,7 @@
     <!-- Custom Css -->
     <link rel="stylesheet" href="{{asset('passets/css/main.css')}}">
     <link rel="stylesheet" href="{{asset('passets/css/color_skins.css')}}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.1/dist/chart.min.js"></script>
 </head>
 <body class="theme-purple">
 <!-- Page Loader -->

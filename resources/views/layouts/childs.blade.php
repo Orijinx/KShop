@@ -1,4 +1,3 @@
-<div class="container">
     @foreach($childs as $child)
         <li>
             <a href="/shop/{{$child->id}}">
@@ -9,4 +8,3 @@
             </a>
         </li>
     @endforeach
-</div>

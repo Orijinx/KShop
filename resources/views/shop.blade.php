@@ -49,18 +49,18 @@
                 <div class="shop-header__view">
                     <div class="shop-header__view__icon">
 
-                        <div class="container">
+                        <ul class="container">
                             @foreach($alltags as $tg)
                                 @if(count($tg->Childs))
-                                    <div>
+                                    <li>
                                         <a href="/shop/{{$tg->id}}">
                                             {{ $tg->name }}
                                         </a>
-                                    </div>
+                                    </li>
                                     @include('layouts.childs',['childs' => $tg->Childs])
                                 @endif
                             @endforeach
-                        </div>
+                        </ul>
                     </div>
                 </div>
 

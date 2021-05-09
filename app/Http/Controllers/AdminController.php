@@ -45,30 +45,41 @@ class AdminController extends Controller
         $tags = \App\tags::all();
         return view("panel.tags", compact("tags"));
     }
+
     public function addTag(Request $req)
     {
 
         $tag = new \App\tags();
-        foreach ($req->son as $s){
-            if($s == $req->parent){
-                return back()->with("status","Секция не может быть одновременно дочерней и отцовской");
-            }
-        }
+
         $tag->name = $req->name;
 
-        foreach ($req->son as $s){
-            if($s == $req->parent){
-                return back()->with("status","Секция не может быть одновременно дочерней и отцовской");
-            }
-        }
-        if($req->son){
-            $tag->son_id = $req->son;
-        }
-        if($req->parent){
+        if ($req->parent != 0) {
             $tag->parent_id = $req->parent;
         }
         $tag->save();
         return back()->with("status", "Tag added");
+    }
+
+    public function updateTag(Request $req)
+    {
+
+        $tag = \App\tags::where("id", $req->id)->first();
+
+        $tag->parent_id = $req->id_parent;
+        $tag->save();
+        return back()->with("status", "Tag updated");
+    }
+
+    public function deleteTag(Request $req)
+    {
+
+        $tag = \App\tags::whereIn("id", $req->id);
+        $pTags = \App\tags::whereIn("parent_id", $req->id);
+
+        $pTags->delete();
+        $tag->delete();
+
+        return back()->with("status", "Tag updated");
     }
 
     public function addBrand(Request $req)
@@ -89,7 +100,7 @@ class AdminController extends Controller
             }
             \App\brand::where("id", $id)->delete();
         }
-        return back()->with("status","Delete Success!");
+        return back()->with("status", "Delete Success!");
     }
 
     public function addProduct(Request $req)
@@ -117,6 +128,33 @@ class AdminController extends Controller
 //        $products = Product::all()->simplePaginate(15);
         $products = Product::Paginate(5);
 
-        return view('panel.products', ['products' => $products]);
+        return view('panel.products', compact("products"));
+    }
+
+    public function GetStat(){
+        $stat = \App\stat::where("search",true)->get();
+
+        if(!empty($stat)) {
+
+            return response()->json($stat, 200);
+        }
+        else{
+            $stat = array("status"=>"false");
+            return response()->json($stat, 200);
+
+        }
+    }
+    public function GetIndexStat(){
+        $stat = \App\stat::where("name", "index")->Where("search",null)->get();
+
+        if(!empty($stat)) {
+
+            return response()->json($stat, 200);
+        }
+        else{
+            $stat = array("status"=>"false");
+            return response()->json($stat, 200);
+
+        }
     }
 }

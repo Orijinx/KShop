@@ -23,6 +23,7 @@ Route::get('/cart',[MainController::class,"CartView"]);
 Route::get('/shop',[MainController::class,"ShopView"]);
 Route::get('/shop/{id}',[MainController::class,"ShopTagView"]);
 Route::get('/orders',[MainController::class,"OrderView"]);
+Route::get('/search',[MainController::class,"SearchView"]);
 
 
 //Управление корзиной
@@ -48,6 +49,11 @@ Route::get('/all-product',[AdminController::class,"allProducts"]);
 Route::post('/addProduct',[AdminController::class,"addProduct"]);
 Route::post('/addBrand',[AdminController::class,"addBrand"]);
 Route::post('/delBrands',[AdminController::class,"DelBrands"]);
+Route::post('/addTag',[AdminController::class,"addTag"]);
+Route::post('/updateTag',[AdminController::class,"updateTag"]);
+Route::post('/deleteTag',[AdminController::class,"deleteTag"]);
+Route::get('/getStat',[AdminController::class,"GetStat"]);
+Route::get('/getIndexStat',[AdminController::class,"GetIndexStat"]);
 
 
 

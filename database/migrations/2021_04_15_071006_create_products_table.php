@@ -21,9 +21,9 @@ class CreateProductsTable extends Migration
             $table->float("price");
             $table->text("description");
             //Tag Foreign
-            $table->foreignId("tag_id")->references("id")->on("tags");
+            $table->foreignId("tag_id")->nullable()->references("id")->on("tags");
             $table->string("img_path")->nullable();
-            $table->foreignId("brand_id")->references("id")->on("brands");
+            $table->foreignId("brand_id")->nullable()->references("id")->on("brands");
         });
     }
 

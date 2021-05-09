@@ -53,6 +53,7 @@
                             <div class="col-sm-12">
                                 <label for="parent">Отцовская</label>
                                 <select  name="parent" id="parent">
+                                    <option value="0">Нет</option>
                                     @foreach($tags as $tag)
                                         <option value="{{$tag->id}}">{{$tag->name}}</option>
                                     @endforeach
@@ -69,11 +70,56 @@
             </div>
             </div>
         </form>
-        <form method="post" action="/delTag" multiple="multiple">
+        <form method="post" action="/updateTag" multiple="multiple">
+            <div class="container-fluid">
+                <div class="row clearfix">
+                    <div class="card">
+                        <div class="header">
+                            <h2><strong>Изменение</strong>
+                                {{--<small>Description text here...</small>--}}
+                            </h2>
+                        </div>
+                        <div class="col-sm-12">
+                            @csrf
+
+                            <label for="id">Секция</label>
+                            <select  name="id">
+                                @foreach($tags as $tag)
+                                    <option value="{{$tag->id}}">{{$tag->name}}</option>
+                                @endforeach
+
+                            </select>
+                            {{--<input type="checkbox" value="{{$brand->id}}" id="{{$brand->name}}">--}}
+                        </div>
+
+                        <div class="col-sm-12">
+                            @csrf
+
+                            <label for="id_parent">Отцовская</label>
+                            <select name="id_parent">
+                                @foreach($tags as $tag)
+                                    <option value="{{$tag->id}}">{{$tag->name}}</option>
+                                @endforeach
+
+                            </select>
+                            {{--<input type="checkbox" value="{{$brand->id}}" id="{{$brand->name}}">--}}
+                            <input type="submit" value="Удалить">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+        <form method="post" action="/deleteTag" multiple="multiple">
             <div class="container-fluid">
                 <div class="row clearfix">
 
                     <div class="card">
+                        <div class="header">
+                            <h2><strong>Удаление</strong>
+                                {{--<small>Description text here...</small>--}}
+                            </h2>
+                        </div>
                         <div class="col-sm-12">
                             @csrf
 

@@ -37,7 +37,9 @@
                                     <div class="detail">
                                         <h5 class="text-success m-t-0 m-b-0">{{$prod->price}}</h5>
                                         <h4 class="m-t-0"><a href="#" class="col-blue-grey">{{$prod->name}}</a></h4>
+                                        @if(isset($prod->Brand))
                                         <p class="text-muted"><i class="zmdi zmdi-pin m-r-5"></i>{{$prod->Brand->name}}</p>
+                                        @endif
                                         <p class="text-muted m-b-0">{{$prod->description}}</p>
                                     </div>
                                     {{--<div class="property-action m-t-15">--}}
