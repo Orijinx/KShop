@@ -115,15 +115,16 @@
                     </ul>
                 </div>
                 <div class="menu-functions "><a class="menu-icon -search" href="#">
-                        {{--<img--}}
-                        {{--src="{{asset('assets/images/header/search-icon.png')}}" alt="Search icon"/></a>--}}
-                        {{--<div class="search-box">--}}
-                        {{--<form>--}}
-                        {{--<input type="text" placeholder="What are you looking for?" name="search"/>--}}
-                        {{--<button><img src="{{asset('assets/images/header/search-icon.png')}}" alt="Search icon"/>--}}
-                        {{--</button>--}}
-                        {{--</form>--}}
-                        {{--</div>--}}
+                        <img
+                            src="{{asset('assets/images/header/search-icon.png')}}" alt="Search icon"/></a>
+                    <div class="search-box">
+                        <form action="/search" method="get">
+                            @csrf
+                            <input type="text" name="search" placeholder="What are you looking for?" name="search"/>
+                            <button><img src="{{asset('assets/images/header/search-icon.png')}}" alt="Search icon"/>
+                            </button>
+                        </form>
+                    </div>
                         {{--<a class="menu-icon -wishlist" href="/wishlist.html"><img--}}
                         {{--src="{{asset('assets/images/header/wishlist-icon.png')}}" alt="Wishlist icon"/></a>--}}
                         <div class="menu-cart">

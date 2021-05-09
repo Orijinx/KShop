@@ -20,10 +20,10 @@ class CreateProductsTable extends Migration
             $table->string("name");
             $table->float("price");
             $table->text("description");
+            //Tag Foreign
+            $table->foreignId("tag_id")->nullable()->references("id")->on("tags");
             $table->string("img_path")->nullable();
-
-            $table->string("brand")->nullabel();
-            $table->string("p_code")->nullable();
+            $table->foreignId("brand_id")->nullable()->references("id")->on("brands");
         });
     }
 
