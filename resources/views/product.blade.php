@@ -24,21 +24,21 @@
                                     <div class="slider__item"><img src="{{asset($product->img_path)}}"
                                                                    alt="Product image"/></div>
                                     {{--<div class="slider__item"><img src="assets/images/product/2.png"--}}
-                                                                   {{--alt="Product image"/></div>--}}
+                                    {{--alt="Product image"/></div>--}}
                                     {{--<div class="slider__item"><img src="assets/images/product/3.png"--}}
-                                                                   {{--alt="Product image"/></div>--}}
+                                    {{--alt="Product image"/></div>--}}
                                     {{--<div class="slider__item"><img src="assets/images/product/4.png"--}}
-                                                                   {{--alt="Product image"/></div>--}}
+                                    {{--alt="Product image"/></div>--}}
                                 </div>
                                 {{--<div class="product-detail__slide-two__small">--}}
-                                    {{--<div class="slider__item"><img src="{{asset($product->img_path)}}"--}}
-                                                                   {{--alt="Product image"/></div>--}}
-                                    {{--<div class="slider__item"><img src="assets/images/product/2.png"--}}
-                                                                   {{--alt="Product image"/></div>--}}
-                                    {{--<div class="slider__item"><img src="assets/images/product/3.png"--}}
-                                                                   {{--alt="Product image"/></div>--}}
-                                    {{--<div class="slider__item"><img src="assets/images/product/4.png"--}}
-                                                                   {{--alt="Product image"/></div>--}}
+                                {{--<div class="slider__item"><img src="{{asset($product->img_path)}}"--}}
+                                {{--alt="Product image"/></div>--}}
+                                {{--<div class="slider__item"><img src="assets/images/product/2.png"--}}
+                                {{--alt="Product image"/></div>--}}
+                                {{--<div class="slider__item"><img src="assets/images/product/3.png"--}}
+                                {{--alt="Product image"/></div>--}}
+                                {{--<div class="slider__item"><img src="assets/images/product/4.png"--}}
+                                {{--alt="Product image"/></div>--}}
                                 {{--</div>--}}
                             </div>
                         </div>
@@ -46,28 +46,30 @@
                             <div class="product-detail__content">
                                 <div class="product-detail__content">
                                     <div class="product-detail__content__header">
-                                        <h5>eyes</h5>
+                                        <h5>{{$product->brand->name}}</h5>
                                         <h2>{{$product->name}}</h2>
                                     </div>
-                                    <div class="product-detail__content__header__comment-block">
-                                        <div class="rate">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                        </div>
-                                        {{--<p>03 review</p><a href="#">Write a reviews</a>--}}
-                                    </div>
+                                    {{--<div class="product-detail__content__header__comment-block">--}}
+                                    {{--<div class="rate">--}}
+                                    {{--<i class="fas fa-star"></i>--}}
+                                    {{--<i class="fas fa-star"></i>--}}
+                                    {{--<i class="fas fa-star"></i>--}}
+                                    {{--<i class="fas fa-star"></i>--}}
+                                    {{--<i class="far fa-star"></i>--}}
+                                    {{--</div>--}}
+                                    {{--<p>03 review</p><a href="#">Write a reviews</a>--}}
+                                    {{--</div>--}}
                                     <h3>{{$product->price}}₽</h3>
                                     <div class="divider"></div>
                                     <div class="product-detail__content__footer">
                                         <ul>
-                                            <li>Бренд:{{$product->brand}}
-                                            </li>
-                                            <li>Артикул:{{$product->p_code}}
-                                            </li>
-                                            <li>Наличие: есть</li>
+                                            Бренд:<a href="/brand/{{$product->brand->id}}">
+                                                <li>{{$product->brand->name}}
+                                                </li>
+                                            </a>
+                                            {{--<li>Артикул:{{$product->p_code}}--}}
+                                            {{--</li>--}}
+                                            {{--<li>Наличие: есть</li>--}}
                                         </ul>
                                         {{--<div class="product-detail__colors"><span>Color:</span>--}}
                                         {{--<div class="product-detail__colors__item" style="background-color: #8B0000"></div>--}}
@@ -87,6 +89,9 @@
                                                             class="fas fa-shopping-bag"></i>
                                                     </button>
                                                     <h5>Добавить в корзину</h5>
+                                                    @if(session("status"))
+                                                        <h4>{{session("status")}}</h4>
+                                                    @endif
                                                 </form>
                                             </div>
                                             <div class="product-detail__controler__actions"></div>

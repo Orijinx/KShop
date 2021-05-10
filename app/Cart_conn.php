@@ -11,4 +11,8 @@ class Cart_conn extends Model
     {
         return $this->belongsTo(\App\Product::class, 'product_id');
     }
+    public function cart()
+    {
+        return $this->belongsTo(\App\Cart::class, 'cart_id');
+    }
 }

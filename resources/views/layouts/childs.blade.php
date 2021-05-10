@@ -1,10 +1,10 @@
     @foreach($childs as $child)
-        <li>
-            <a href="/shop/{{$child->id}}">
+        <ul>
+            <a  style="color: lightpink" href="/shop/{{$child->id}}">
                 {{ $child->name }}
                 @if(count($child->childs))
                     @include('layouts.childs',['childs' => $child->Childs])
                 @endif
             </a>
-        </li>
+        </ul>
     @endforeach

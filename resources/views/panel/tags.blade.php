@@ -6,8 +6,8 @@
         <div class="block-header">
             <div class="row">
                 <div class="col-lg-7 col-md-6 col-sm-12">
-                    <h2>Добавить продукт
-                        <small class="text-muted">Добропожаловать в административную панель!</small>
+                    <h2>Добавить секции
+                        <small class="text-muted">Добро пожаловать в административную панель!</small>
                     </h2>
                 </div>
                 <div class="col-lg-5 col-md-6 col-sm-12">
@@ -103,7 +103,7 @@
 
                             </select>
                             {{--<input type="checkbox" value="{{$brand->id}}" id="{{$brand->name}}">--}}
-                            <input type="submit" value="Удалить">
+                            <input type="submit"  class="btn btn-primary btn-round" value="Изменить">
                         </div>
                     </div>
                 </div>
@@ -131,7 +131,7 @@
 
                             </select>
                             {{--<input type="checkbox" value="{{$brand->id}}" id="{{$brand->name}}">--}}
-                            <input type="submit" value="Удалить">
+                            <input type="submit"  class="btn btn-primary btn-round" value="Удалить">
                         </div>
                     </div>
                 </div>

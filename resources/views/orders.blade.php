@@ -46,72 +46,55 @@
                     </div>
 
                 </div>
-                <div class="shop-header__view">
-                    <div class="shop-header__view__icon">
+                {{--<div class="shop-header__view">--}}
+                {{--<div class="shop-header__view__icon">--}}
 
-                        <div>
-                            @foreach($alltags as $tg)
-                                @if(count($tg->Childs))
-                                    <li>
-                                        <a href="/shop/{{$tg->id}}">
-                                            {{ $tg->name }}
-                                        </a>
-                                        @include('layouts.childs',['childs' => $tg->Childs])
-                                    </li>
-                                @endif
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
+                {{--<ul class="container">--}}
+                {{--@foreach($alltags as $tg)--}}
+                {{--@if(count($tg->Childs))--}}
+                {{--<li>--}}
+                {{--<a href="/shop/{{$tg->id}}">--}}
+                {{--{{ $tg->name }}--}}
+                {{--</a>--}}
+                {{--</li>--}}
+                {{--@include('layouts.childs',['childs' => $tg->Childs])--}}
+                {{--@endif--}}
+                {{--@endforeach--}}
+                {{--</ul>--}}
+                {{--</div>--}}
+                {{--</div>--}}
 
 
             </div>
             <div class="shop-products">
                 <div class="shop-products__gird">
                     <div class="row mx-n1 mx-lg-n3">
-                        @foreach($products as $prod)
-
-                            <div class="col-6 col-md-4 px-1 px-md-3">
-                                <div class="product ">
-                                    {{--<div class="product-type"><h5 class="-new">New</h5></div>--}}
-                                    <div class="product-thumb"><a class="product-thumb__image"
-                                                                  href="/product/{{$prod->id}}"><img
-                                                src="{{asset($prod->img_path)}}" alt="Product image"/>
-                                            {{--<img--}}
-                                            {{--src="assets/images/product/2.png" alt="Product image"/></a>--}}
-                                            <div class="product-thumb__actions">
-                                                <div class="product-btn"><a
-                                                        class="btn -white product__actions__item -round product-atc"
-                                                        href="/product/{{$prod->id}}"><i
-                                                            class="fas fa-shopping-bag"></i></a>
+                        @foreach($orders as $order)
+                            <div class="col-6 col-md-4 px-1 px-md-3 rounded shadow-lg "
+                                 style="border: gainsboro 1px solid">
+                                <h2>#{{$order->id}}</h2>
+                                <ul>
+                                    @foreach($order->order as $cart)
+                                        <li>
+                                            <div class="product shadow-lg ">
+                                                <div class="product-content">
+                                                    <a class="product-name"
+                                                       href="/product/{{$cart->product->id}}">{{$cart->product->name}}</a>
+                                                    <div class="product-content__footer">
+                                                        <h4>Кол-во:{{$cart->quantity}}</h4>
+                                                    </div>
                                                 </div>
-                                                {{--<div class="product-btn"><a--}}
-                                                {{--class="btn -white product__actions__item -round product-qv" href="#"><i--}}
-                                                {{--class="fas fa-eye"></i></a>--}}
-                                                {{--</div>--}}
-                                                {{--<div class="product-btn"><a class="btn -white product__actions__item -round"--}}
-                                                {{--href="#"><i class="fas fa-heart"></i></a>--}}
-                                                {{--</div>--}}
                                             </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <div class="product-content__header">
-                                            <div class="product-category">{{$prod->brand->name}}</div>
-                                            <div class="rate"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                                    class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                                    class="far fa-star"></i></div>
-                                        </div>
-                                        <a class="product-name" href="/product/{{$prod->id}}">{{$prod->name}}</a>
-                                        <div class="product-content__footer">
-                                            <h5 class="product-price--main">{{$prod->price}}</h5>
-                                            {{--<div class="product-colors">--}}
-                                            {{--<div class="product-colors__item" style="background-color: #8B0000"></div>--}}
-                                            {{--<div class="product-colors__item" style="background-color: #4169E1"></div>--}}
-                                            {{--</div>--}}
-                                        </div>
-                                    </div>
+                                        </li>
+
+                                    @endforeach
+                                </ul>
+                                <div class="fixed-bottom"><h3>Сумма заказа:{{$cart->cart->amount}}</h3>
                                 </div>
+
+
                             </div>
+
                         @endforeach
                         {{--<div class="col-6 col-md-4 px-1 px-md-3">--}}
                         {{--<div class="product ">--}}
@@ -831,7 +814,7 @@
             {{--<button class="page-link"><i class="far fa-angle-right"></i></button>--}}
             {{--</li>--}}
             <li class="page-item active">
-                {{$products->links()}}
+                {{$orders->links()}}
             </li>
         </ul>
     </div>

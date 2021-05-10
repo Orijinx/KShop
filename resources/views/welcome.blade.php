@@ -171,7 +171,7 @@
                                     </div>
                                     <div class="product-content">
                                         <div class="product-content__header">
-                                            <div class="product-category">{{$product->brand}}</div>
+                                            <div class="product-category">{{$product->brand->name}}</div>
                                             <div class="rate"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
                                                     class="fas fa-star"></i><i class="fas fa-star"></i><i
                                                     class="far fa-star"></i></div>

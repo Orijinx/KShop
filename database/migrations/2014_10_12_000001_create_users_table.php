@@ -32,6 +32,10 @@ class CreateUsersTable extends Migration
 //            Cart info
             //Cart foreign key
             $table->foreignId("cart_id")->references("id")->on("carts");
+
+
+            //Admin
+            $table->boolean("isAdmin")->default(false);
         });
     }
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Product;
 use App\User;
@@ -14,17 +15,29 @@ class AdminController extends Controller
     //
     public function AdminView()
     {
-        $prod = Product::all();
-        $us = User::all();
+        if ((Auth::check()) && (Auth::user()->isAdmin)) {
+            $prod = Product::all();
+            $us = User::all();
 
-        $orders = Cart::where("isOrder", true)->get();
-        $total = 0;
+            $orders = Cart::where("isOrder", true)->get();
+            $total = 0;
 
-        foreach ($orders as $o) {
-            $total += $o->amount;
+            foreach ($orders as $o) {
+                $total += $o->amount;
+            }
+
+            return view("panel.index", compact("prod", "us", "orders", "total"));
         }
+        else return back();
+    }
+    public function OrderView()
+    {
+        if ((Auth::check()) && (Auth::user()->isAdmin)) {
+            $orders = \App\order_conn::where("user_id",Auth::user()->id)->Paginate(5);
 
-        return view("panel.index", compact("prod", "us", "orders", "total"));
+            return view("panel.orders",compact("orders"));
+        }
+        else return back();
     }
 
     public function addProductView()
@@ -131,28 +144,29 @@ class AdminController extends Controller
         return view('panel.products', compact("products"));
     }
 
-    public function GetStat(){
-        $stat = \App\stat::where("search",true)->get();
+    public function GetStat()
+    {
+        $stat = \App\stat::where("search", true)->get();
 
-        if(!empty($stat)) {
+        if (!empty($stat)) {
 
             return response()->json($stat, 200);
-        }
-        else{
-            $stat = array("status"=>"false");
+        } else {
+            $stat = array("status" => "false");
             return response()->json($stat, 200);
 
         }
     }
-    public function GetIndexStat(){
-        $stat = \App\stat::where("name", "index")->Where("search",null)->get();
 
-        if(!empty($stat)) {
+    public function GetIndexStat()
+    {
+        $stat = \App\stat::where("name", "index")->Where("search", null)->get();
+
+        if (!empty($stat)) {
 
             return response()->json($stat, 200);
-        }
-        else{
-            $stat = array("status"=>"false");
+        } else {
+            $stat = array("status" => "false");
             return response()->json($stat, 200);
 
         }

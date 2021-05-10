@@ -29,10 +29,14 @@ class CartController extends Controller
         return back();
     }
     public function addToCart(Request $req){
-        $cart_conn = new Cart_conn();
-        $cart_conn->product_id = $req->id;
-        $cart_conn->cart_id = Auth::user()->cart_id;
-        $cart_conn->save();
-        return redirect('/cart');
+        if (Auth::check()) {
+            $cart_conn = new Cart_conn();
+            $cart_conn->product_id = $req->id;
+            $cart_conn->cart_id = Auth::user()->cart_id;
+            $cart_conn->save();
+            return redirect('/cart');
+        }else{
+            return back()->with("status","Вы не авторизованы");
+        }
     }
 }

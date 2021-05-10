@@ -110,7 +110,11 @@
                             {{--alt="New product banner"/></a></ul>--}}
                             {{--</ul>--}}
                         </li>
-                        <li><a href="/cart">Корзина</a></li>
+                        @if(Auth::check())
+                            <li><a href="/cart">Корзина</a></li>
+
+                            <li><a href="/orders">Заказы</a></li>
+                        @endif
                         {{--<li><a href="contact.html">Contact</a></li>--}}
                     </ul>
                 </div>

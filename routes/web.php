@@ -24,6 +24,8 @@ Route::get('/shop',[MainController::class,"ShopView"]);
 Route::get('/shop/{id}',[MainController::class,"ShopTagView"]);
 Route::get('/orders',[MainController::class,"OrderView"]);
 Route::get('/search',[MainController::class,"SearchView"]);
+Route::get('/brand/{id}',[MainController::class,"BrandView"]);
+Route::get('/orders',[MainController::class,"OrderView"]);
 
 
 //Управление корзиной
@@ -45,6 +47,7 @@ Route::get('/add-product',[AdminController::class,"addProductView"]);
 Route::get('/brands',[AdminController::class,"BrandsView"]);
 Route::get('/tags',[AdminController::class,"TagsView"]);
 Route::get('/all-product',[AdminController::class,"allProducts"]);
+Route::get('/aorder',[AdminController::class,"OrderView"]);
 // Измениения из админки
 Route::post('/addProduct',[AdminController::class,"addProduct"]);
 Route::post('/addBrand',[AdminController::class,"addBrand"]);

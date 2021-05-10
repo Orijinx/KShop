@@ -42,8 +42,8 @@
                                                             src="{{asset($item->Product->img_path)}}"
                                                             alt="Product image"/></div>
                                                     <div class="cart-product__content">
-                                                        <h5>eyes</h5><a
-                                                            href="/product/{{$item->id}}">{{$item->Product->name}}</a>
+                                                        <h5>{{$item->Product->brand->name}}</h5><a
+                                                            href="/product/{{$item->Product->id}}">{{$item->Product->name}}</a>
                                                     </div>
                                                 </div>
                                             </td>

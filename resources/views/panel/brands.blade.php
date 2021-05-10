@@ -6,7 +6,7 @@
         <div class="block-header">
             <div class="row">
                 <div class="col-lg-7 col-md-6 col-sm-12">
-                    <h2>Добавить продукт
+                    <h2>Добавить бренд
                         <small class="text-muted">Добропожаловать в административную панель!</small>
                     </h2>
                 </div>
@@ -93,7 +93,7 @@
 
                             </select>
                                 {{--<input type="checkbox" value="{{$brand->id}}" id="{{$brand->name}}">--}}
-                            <input type="submit" value="Удалить">
+                            <input type="submit"  class="btn btn-primary btn-round" value="Удалить">
                         </div>
                     </div>
                 </div>

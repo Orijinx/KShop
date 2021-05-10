@@ -24,7 +24,7 @@ class MainController extends Controller
 
 
         if (isset($stat)) {
-            if($stat->created_at->diffInHours($date) >=24) {
+            if ($stat->created_at->diffInHours($date) >= 24) {
                 $stat = new stat();
                 $stat->name = "index";
                 $stat->count = 1;
@@ -79,19 +79,75 @@ class MainController extends Controller
         }
     }
 
-    public function ProductView($id)
+    public function BrandView($id)
     {
-        $product = Product::where("id", $id)->first();
+
+        $products = \App\Product::where("brand_id","=",$id)->simplePaginate(5);
+
+        $alltags = tags::all();
+        $alltags = $alltags->sortBy(["parent_id"]);
 
         if (Auth::check()) {
-            $cart = Cart::where("id", Auth::user()->cart_id)->where("isOrder", false)->first();
-            $cart_con = Cart_conn::where("cart_id", Auth::user()->id)->get();
+
+            $cart = Cart::where("id", Auth::user()->cart_id)->first();
+            $cart_con = Cart_conn::where("cart_id", Auth::user()->cart_id)->get();
             $cart->amount = 0;
             foreach ($cart_con as $item) {
                 $cart->amount += $item->Product->price * $item->quantity;
                 $cart->save();
             }
-            return view("product", compact("cart", "product"));
+            return view("shop", compact("cart", "cart_con", "products", "alltags"));
+        } else {
+
+            return view('shop', ['products' => $products, "alltags" => $alltags]);
+
+
+        }
+
+
+    }
+
+
+    public function OrderView()
+    {
+
+
+        $alltags = tags::all();
+        $alltags = $alltags->sortBy(["parent_id"]);
+        if (Auth::check()) {
+            $orders = \App\order_conn::where("user_id",Auth::user()->id)->Paginate(5);
+
+            $cart = Cart::where("id", Auth::user()->cart_id)->first();
+            $cart_con = Cart_conn::where("cart_id", Auth::user()->cart_id)->get();
+            $cart->amount = 0;
+            foreach ($cart_con as $item) {
+                $cart->amount += $item->Product->price * $item->quantity;
+                $cart->save();
+            }
+            return view("orders", compact("cart", "cart_con","orders","alltags"));
+        } else {
+
+            return back();
+
+
+        }
+
+
+    }
+
+    public function ProductView($id)
+    {
+        $product = Product::where("id", $id)->first();
+
+        if (Auth::check()) {
+            $cart = Cart::where("id", Auth::user()->cart_id)->first();
+            $cart_con = Cart_conn::where("cart_id", Auth::user()->cart_id)->get();
+            $cart->amount = 0;
+            foreach ($cart_con as $item) {
+                $cart->amount += $item->Product->price * $item->quantity;
+                $cart->save();
+            }
+            return view("product", compact("cart","cart_con", "product"));
 
         } else {
             return view("product", compact("product"));
@@ -101,7 +157,7 @@ class MainController extends Controller
 
     public function ShopView()
     {
-        $products = DB::table('products')->simplePaginate(5);
+        $products = \App\Product::Paginate(5);
 
         $alltags = tags::all();
         $alltags = $alltags->sortBy(["parent_id"]);
@@ -141,7 +197,7 @@ class MainController extends Controller
         }
         $stat->save();
 
-        $products = DB::table('products')->where("name", "LIKE", '%' . "$search" . '%')->simplePaginate(5);
+        $products = \App\Product::where("name", "LIKE", '%' . "$search" . '%')->simplePaginate(5);
 
         $alltags = tags::all();
         $alltags = $alltags->sortBy(["parent_id"]);
@@ -182,7 +238,7 @@ class MainController extends Controller
         foreach ($tag->Childs as $g) {
             array_push($id_arr, $g->id);
         }
-        $products = DB::table('products')->whereIn("tag_id", $id_arr)->simplePaginate(5);
+        $products = \App\Product::whereIn("tag_id", $id_arr)->simplePaginate(5);
 //
 //        while (isset($chil)){
 //            var_dump($chil);
